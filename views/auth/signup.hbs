@@ -1,0 +1,62 @@
+<div id="form">
+  <div><h2 class="signup-title" >Sign Up</h2></div>
+  <br>
+  <br>
+  
+  <form class="mx-auto w-50" action="/auth/signup" method="POST" enctype="multipart/form-data">
+
+    <div class="mb-3">
+      <label form="exampleInputEmail1" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="username"
+        value="{{user.username}}"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label form="exampleInputEmail1" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="email"
+        value="{{user.email}}"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label form="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="password"
+        value="{{user.password}}"
+      />
+      </div>
+
+    <label> Profile image
+      <input type="file" name="image" placeholder="Your image"/>
+    </label>
+
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+
+    {{#if errorMessage}}
+      <p class="alert error" role="alert">{{errorMessage}}</p>
+    {{/if}}
+
+  </form>
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+{{> footer}}
